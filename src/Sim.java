@@ -10,8 +10,9 @@ public class Sim {
     public int numC;
     private int count;
     public int[] chiamateEff = new int[count+2];
-    public int contaS;
-    public float Minchiamata = contaS/60;
+    public double contaS;
+    public double Minchiamata;
+    public boolean attStacc;
 
 
 
@@ -52,22 +53,31 @@ public class Sim {
             chiamateEff[i] = prefC;
             chiamateEff[i+1] = numC;
         }
+        attStacc=false;
+        for (double j = 0.0;attStacc==true; j++)
+            contaS=j;
 
         while (true){
+
             System.out.println("Premi 5 per chiudere la chiamata");
             int t = 0;
-            contaS++;
+
+
+
             Scanner inn = new Scanner(System.in);
             t = inn.nextInt();
             if (t==5){
                 count++;
+                attStacc=true;
                 break;
             }
         }
+
     }
 
+
     public String registoChiamate() {
-        return "Hai chiamato questi numeri: "+Arrays.toString(chiamateEff)+" Totale min chiamate: "+Minchiamata;
+        return "Hai chiamato questi numeri: "+Arrays.toString(chiamateEff)+" Totale min chiamate: "+contaS/60;
 
     }
 
