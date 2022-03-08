@@ -1,19 +1,27 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Sim {
-    private final int Pref = 349;
-    private final int numP = 5793081;
+    private operatore operatore;
+    private static int Pref ;
+    private static int numP ;
     private € credito;
     public int prefC;
     public int numC;
     public int[] chiamateEff = new int[100];
     private int count;
+    public int contaS;
+    public double Minchiamata = contaS/60;
 
 
-    public Sim(€ credito, int prefC, int numC) {
+
+
+    public Sim(€ credito,int Prefisso,int numP, operatore operatore) {
         this.credito = credito;
-        this.prefC = prefC;
-        this.numC = numC;
+        this.Pref=Prefisso;
+        this.numP=numP;
+        this.operatore=operatore;
+
     }
 
 
@@ -49,6 +57,7 @@ public class Sim {
         this.numC = numC;
     }
 
+
     public void Chiamata(int prefC, int numC){
         this.prefC=prefC;
         this.numC=numC;
@@ -56,13 +65,16 @@ public class Sim {
         for (int i = count; i < count+2; i++) {
             chiamateEff[i] = prefC;
             chiamateEff[i+1] = numC;
-
         }
 
         while (true){
             System.out.println("Premi 5 per chiudere la chiamata");
+            int t = 0;
+            if (t==0){
+                contaS++;
+            }
             Scanner inn = new Scanner(System.in);
-            int t = inn.nextInt();
+            t = inn.nextInt();
             if (t==5){
                 count++;
                 break;
@@ -70,7 +82,23 @@ public class Sim {
         }
     }
 
+    public String registoChiamate() {
+        return "Hai chiamato questi numeri: "+Arrays.toString(chiamateEff)+" Totale min chiamate: "+Minchiamata;
+
+    }
 
 
-
+    @Override
+    public String toString() {
+        return "Sim{" +
+                "operatore=" + operatore +
+                ", credito=" + credito +
+                ", prefC=" + prefC +
+                ", numC=" + numC +
+                ", chiamateEff=" + Arrays.toString(chiamateEff) +
+                ", count=" + count +
+                ", contaS=" + contaS +
+                ", Minchiamata=" + Minchiamata +
+                '}';
+    }
 }
