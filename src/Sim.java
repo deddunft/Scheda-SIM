@@ -9,12 +9,11 @@ public class Sim {
     public int prefC;
     public int numC;
     private int count;
-    public int[] chiamateEff = new int[count+2];
+    public int[] chiamateEff = new int[10];
+
     public double contaS;
     public double Minchiamata;
     public boolean attStacc;
-
-
 
 
     public Sim(€ credito,int Prefisso,int numP, operatore operatore) {
@@ -43,16 +42,22 @@ public class Sim {
     }
 
 
+    public int getCount() {
+        return count;
+    }
 
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     public void Chiamata(int prefC, int numC){
         this.prefC=prefC;
         this.numC=numC;
 
-        for (int i = count; i < count+1; i++) {
-            chiamateEff[i] = prefC;
-            chiamateEff[i+1] = numC;
-        }
+
+            chiamateEff[getCount()] = prefC;
+            chiamateEff[getCount()+1] = numC;
+
         attStacc=false;
         for (double j = 0.0;attStacc==true; j++)
             contaS=j;
@@ -62,12 +67,10 @@ public class Sim {
             System.out.println("Premi 5 per chiudere la chiamata");
             int t = 0;
 
-
-
             Scanner inn = new Scanner(System.in);
             t = inn.nextInt();
             if (t==5){
-                count++;
+                setCount(+2);
                 attStacc=true;
                 break;
             }

@@ -8,7 +8,10 @@ public class Main {
 
         deddu.Chiamata(357,8959362);
         System.out.println(deddu.registoChiamate());
-
+        deddu.Chiamata(357,8943563);
+        System.out.println(deddu.registoChiamate());
+        deddu.Chiamata(357,548135);
+        System.out.println(deddu.registoChiamate());
 
 
     }
