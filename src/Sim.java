@@ -8,10 +8,10 @@ public class Sim {
     private € credito;
     public int prefC;
     public int numC;
-    public int[] chiamateEff = new int[100];
     private int count;
+    public int[] chiamateEff = new int[count+2];
     public int contaS;
-    public double Minchiamata = contaS/60;
+    public float Minchiamata = contaS/60;
 
 
 
@@ -41,28 +41,14 @@ public class Sim {
         this.credito = credito;
     }
 
-    public int getPrefC() {
-        return prefC;
-    }
 
-    public void setPrefC(int prefC) {
-        this.prefC = prefC;
-    }
-
-    public int getNumC() {
-        return numC;
-    }
-
-    public void setNumC(int numC) {
-        this.numC = numC;
-    }
 
 
     public void Chiamata(int prefC, int numC){
         this.prefC=prefC;
         this.numC=numC;
 
-        for (int i = count; i < count+2; i++) {
+        for (int i = count; i < count+1; i++) {
             chiamateEff[i] = prefC;
             chiamateEff[i+1] = numC;
         }
@@ -70,9 +56,7 @@ public class Sim {
         while (true){
             System.out.println("Premi 5 per chiudere la chiamata");
             int t = 0;
-            if (t==0){
-                contaS++;
-            }
+            contaS++;
             Scanner inn = new Scanner(System.in);
             t = inn.nextInt();
             if (t==5){
