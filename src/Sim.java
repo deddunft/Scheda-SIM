@@ -12,7 +12,7 @@ public class Sim {
     public long[] chiamateEff = new long[10];
 
     public double contaS;
-    public double Minchiamata;
+    public double Minchiamata=1.0;
     public boolean attStacc;
 
 
