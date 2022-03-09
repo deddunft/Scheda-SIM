@@ -12,7 +12,7 @@ public class Sim {
     public long[] chiamateEff = new long[10];
 
     public double contaS;
-    public double Minchiamata=1.0;
+    public double Minchiamata;
     public boolean attStacc;
 
 
@@ -65,6 +65,7 @@ public class Sim {
             t = inn.nextInt();
             if (t==5){
                 count++;
+                Minchiamata++;
                 attStacc=true;
                 break;
             }
@@ -74,7 +75,7 @@ public class Sim {
 
 
     public String registoChiamate() {
-        return "Hai chiamato questi numeri: "+Arrays.toString(chiamateEff)+" Totale min chiamate: "+contaS/60;
+        return "Hai chiamato questi numeri: "+Arrays.toString(chiamateEff)+" Totale min chiamate: "+Minchiamata;
 
     }
 
