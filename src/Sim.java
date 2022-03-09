@@ -10,6 +10,7 @@ public class Sim {
     public long numC;
     private static int count;
     public long[] chiamateEff = new long[10];
+    public double[] minCe= new double[10];
 
     public double contaS;
     public double Minchiamata;
@@ -52,6 +53,7 @@ public class Sim {
             chiamateEff[getCount()]=numC;
 
 
+        minCe[getCount()]= Minchiamata;
         attStacc=false;
         for (int j = 0;attStacc==true; j++)
             contaS=j;
@@ -73,9 +75,37 @@ public class Sim {
 
     }
 
+    public operatore getOperatore() {
+        return operatore;
+    }
+
+    public static long getNumP() {
+        return numP;
+    }
 
     public String registoChiamate() {
         return "Hai chiamato questi numeri: "+Arrays.toString(chiamateEff)+" Totale min chiamate: "+Minchiamata;
+
+    }
+
+    public String regTot(){
+        return getCredito()+" "+registoChiamate()+" "+getNumP()+" "+getOperatore();
+    }
+    public void chiamateAnum(){
+        Scanner inn = new Scanner(System.in);
+        long g = inn.nextLong();
+
+
+
+        for (int i = 0; i ==g||i <chiamateEff.length  ; i++) {
+            if (chiamateEff[i]==g){
+                System.out.println("min chimata a questo num: "+minCe[i]);
+
+
+            }
+
+        }
+
 
     }
 

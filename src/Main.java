@@ -12,6 +12,8 @@ public class Main {
         System.out.println(deddu.registoChiamate());
         deddu.Chiamata(35777356);
         System.out.println(deddu.registoChiamate());
+        System.out.println(deddu.regTot());
+        deddu.chiamateAnum();
 
 
     }
