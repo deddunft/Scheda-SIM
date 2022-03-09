@@ -3,35 +3,29 @@ import java.util.Scanner;
 
 public class Sim {
     private operatore operatore;
-    private static int Pref ;
-    private static int numP ;
+
+    private static long numP ;
     private € credito;
     public int prefC;
-    public int numC;
-    private int count;
-    public int[] chiamateEff = new int[10];
+    public long numC;
+    private static int count;
+    public long[] chiamateEff = new long[10];
 
     public double contaS;
     public double Minchiamata;
     public boolean attStacc;
 
 
-    public Sim(€ credito,int Prefisso,int numP, operatore operatore) {
+    public Sim(€ credito,long numP, operatore operatore) {
         this.credito = credito;
-        this.Pref=Prefisso;
-        this.numP=numP;
+
+        this.numP= numP;
         this.operatore=operatore;
 
     }
 
 
-    public int getPref() {
-        return Pref;
-    }
 
-    public int getNumP() {
-        return numP;
-    }
 
     public € getCredito() {
         return credito;
@@ -50,16 +44,16 @@ public class Sim {
         this.count = count;
     }
 
-    public void Chiamata(int prefC, int numC){
-        this.prefC=prefC;
+    public void Chiamata(long numC){
+
         this.numC=numC;
 
 
-            chiamateEff[getCount()] = prefC;
-            chiamateEff[getCount()+1] = numC;
+            chiamateEff[getCount()]=numC;
+
 
         attStacc=false;
-        for (double j = 0.0;attStacc==true; j++)
+        for (int j = 0;attStacc==true; j++)
             contaS=j;
 
         while (true){
@@ -70,7 +64,7 @@ public class Sim {
             Scanner inn = new Scanner(System.in);
             t = inn.nextInt();
             if (t==5){
-                setCount(+2);
+                count++;
                 attStacc=true;
                 break;
             }

@@ -4,13 +4,13 @@ public class Main {
 
 
         € credito = new €(50);
-        Sim deddu = new Sim(credito, 349, 5838053, operatore.OVODDAFONE);
+        Sim deddu = new Sim(credito, 349573650, operatore.OVODDAFONE);
 
-        deddu.Chiamata(357,8959362);
+        deddu.Chiamata(347874565);
         System.out.println(deddu.registoChiamate());
-        deddu.Chiamata(357,8943563);
+        deddu.Chiamata(357894356);
         System.out.println(deddu.registoChiamate());
-        deddu.Chiamata(357,548135);
+        deddu.Chiamata(35777356);
         System.out.println(deddu.registoChiamate());
 
 
